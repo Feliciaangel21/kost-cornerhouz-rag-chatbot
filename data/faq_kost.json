@@ -1,0 +1,626 @@
+[
+  {
+    "id": "faq_001",
+    "category": "harga",
+    "question": "Berapa harga sewa kamar kost per bulan?",
+    "answer": "Harga kamar tergantung tipe dan lokasi. Secara umum kamar mandi dalam mulai sekitar Rp1.500.000 per bulan, sedangkan kamar mandi luar mulai sekitar Rp1.000.000 per bulan. Untuk ketersediaan dan harga per lokasi, bisa dicek dari data kamar terbaru ya kak.",
+    "keywords": [
+      "harga",
+      "sewa",
+      "biaya",
+      "tarif",
+      "kamar mandi dalam",
+      "kamar mandi luar"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_002",
+    "category": "tipe_kamar",
+    "question": "Ada tipe kamar apa saja?",
+    "answer": "Tipe kamar tergantung rumah/lokasi, kak. Umumnya tersedia kamar mandi dalam dan kamar mandi luar.",
+    "keywords": [
+      "tipe kamar",
+      "jenis kamar",
+      "kamar mandi dalam",
+      "kamar mandi luar"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_003",
+    "category": "deposit",
+    "question": "Apakah ada deposit atau uang jaminan?",
+    "answer": "Ada deposit jaminan Rp500.000, kak. Deposit ditahan selama masa kost dan bisa dipotong jika ada kerusakan atau barang kost yang hilang.",
+    "keywords": [
+      "deposit",
+      "jaminan",
+      "uang jaminan",
+      "500 ribu",
+      "500rb"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_004",
+    "category": "fasilitas",
+    "question": "Fasilitas kost apa saja?",
+    "answer": "Fasilitas kost termasuk AC, internet/WiFi, dapur bersama, kulkas bersama, akses fingerprint, dan listrik token bayar sendiri, kak.",
+    "keywords": [
+      "fasilitas",
+      "ac",
+      "wifi",
+      "internet",
+      "dapur",
+      "kulkas",
+      "fingerprint",
+      "listrik token"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_005",
+    "category": "fasilitas",
+    "question": "Apakah kamar sudah ada AC?",
+    "answer": "Iya kak, kamar tersedia fasilitas AC.",
+    "keywords": [
+      "ac",
+      "air conditioner",
+      "pendingin",
+      "fasilitas ac"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_006",
+    "category": "fasilitas",
+    "question": "Apakah ada WiFi atau internet?",
+    "answer": "Iya kak, tersedia internet/WiFi di kost.",
+    "keywords": [
+      "wifi",
+      "internet",
+      "wi-fi",
+      "jaringan",
+      "online"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_007",
+    "category": "fasilitas",
+    "question": "Apakah ada water heater?",
+    "answer": "Water heater hanya tersedia untuk kamar mandi dalam, kak.",
+    "keywords": [
+      "water heater",
+      "air panas",
+      "pemanas air",
+      "kamar mandi dalam"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_008",
+    "category": "fasilitas",
+    "question": "Apakah ada dapur bersama?",
+    "answer": "Iya kak, tersedia dapur bersama untuk penghuni kost.",
+    "keywords": [
+      "dapur",
+      "dapur bersama",
+      "masak",
+      "memasak"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_009",
+    "category": "fasilitas",
+    "question": "Apakah ada kulkas bersama?",
+    "answer": "Iya kak, tersedia kulkas bersama untuk penghuni kost.",
+    "keywords": [
+      "kulkas",
+      "kulkas bersama",
+      "refrigerator",
+      "menyimpan makanan"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_010",
+    "category": "listrik",
+    "question": "Apakah listrik sudah termasuk harga sewa?",
+    "answer": "Listrik menggunakan token dan dibayar sendiri oleh penghuni, kak.",
+    "keywords": [
+      "listrik",
+      "token",
+      "token listrik",
+      "bayar listrik",
+      "biaya listrik"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_011",
+    "category": "keamanan",
+    "question": "Apakah akses kost menggunakan fingerprint?",
+    "answer": "Iya kak, akses kost menggunakan fingerprint access.",
+    "keywords": [
+      "fingerprint",
+      "akses",
+      "keamanan",
+      "kunci",
+      "pintu"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_012",
+    "category": "kapasitas",
+    "question": "Satu kamar boleh diisi berapa orang?",
+    "answer": "Kapasitas kamar hanya untuk 1 orang, kak.",
+    "keywords": [
+      "kapasitas",
+      "1 orang",
+      "satu orang",
+      "berdua",
+      "share kamar"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_013",
+    "category": "aturan",
+    "question": "Apakah kost menerima pasutri?",
+    "answer": "Mohon maaf kak, kost tidak menerima pasutri.",
+    "keywords": [
+      "pasutri",
+      "suami istri",
+      "pasangan menikah",
+      "berdua"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_014",
+    "category": "aturan_tamu",
+    "question": "Apakah lawan jenis boleh masuk kamar?",
+    "answer": "Tidak boleh kak. Lawan jenis dilarang masuk kamar atau menginap.",
+    "keywords": [
+      "lawan jenis",
+      "cowok",
+      "cewek",
+      "pacar",
+      "masuk kamar",
+      "menginap"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_015",
+    "category": "aturan_tamu",
+    "question": "Apakah boleh membawa tamu?",
+    "answer": "Boleh bertamu maksimal sampai jam 9 malam di ruang tamu, kak. Tamu tidak boleh masuk kamar jika lawan jenis.",
+    "keywords": [
+      "tamu",
+      "bertamu",
+      "jam tamu",
+      "ruang tamu",
+      "jam 9 malam"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_016",
+    "category": "aturan_tamu",
+    "question": "Apakah orang tua atau teman boleh menginap?",
+    "answer": "Orang tua atau teman boleh menginap dengan biaya Rp100.000 per hari, tapi tidak boleh lawan jenis ya kak.",
+    "keywords": [
+      "ortu",
+      "orang tua",
+      "teman menginap",
+      "menginap",
+      "100 ribu",
+      "100rb"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_017",
+    "category": "aturan_tamu",
+    "question": "Apakah pacar boleh menginap?",
+    "answer": "Tidak boleh kak. Lawan jenis dilarang masuk kamar atau menginap.",
+    "keywords": [
+      "pacar",
+      "menginap",
+      "lawan jenis",
+      "nginep",
+      "pasangan"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_018",
+    "category": "aturan",
+    "question": "Apakah boleh membawa binatang peliharaan?",
+    "answer": "Tidak boleh kak, penghuni dilarang membawa binatang peliharaan.",
+    "keywords": [
+      "binatang",
+      "hewan",
+      "peliharaan",
+      "kucing",
+      "anjing",
+      "pet"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_019",
+    "category": "deposit",
+    "question": "Bagaimana jika ada barang kost rusak atau hilang?",
+    "answer": "Jika ada barang properti kost yang rusak atau hilang, biayanya akan dipotong dari deposit yang ada, kak.",
+    "keywords": [
+      "rusak",
+      "barang hilang",
+      "properti",
+      "potong deposit",
+      "kerusakan"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_020",
+    "category": "aturan",
+    "question": "Apakah boleh berkelahi dengan sesama penghuni kost?",
+    "answer": "Tidak boleh kak. Penghuni dilarang berkelahi dengan sesama anak kost.",
+    "keywords": [
+      "berkelahi",
+      "ribut",
+      "konflik",
+      "sesama penghuni",
+      "anak kost"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_021",
+    "category": "aturan",
+    "question": "Apakah boleh menyetrika di atas kasur?",
+    "answer": "Tidak boleh kak. Jangan setrika di atas kasur karena kasur tidak tahan panas dan bisa menyebabkan deposit dipotong untuk penggantian.",
+    "keywords": [
+      "setrika",
+      "kasur",
+      "sprei",
+      "panas",
+      "deposit"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_022",
+    "category": "aturan",
+    "question": "Apakah boleh memaku pintu atau tembok?",
+    "answer": "Tidak boleh kak. Dilarang memaku pintu atau tembok. Kalau ingin memasang gantungan, gunakan gantungan baju yang berperekat.",
+    "keywords": [
+      "paku",
+      "memaku",
+      "tembok",
+      "pintu",
+      "gantungan",
+      "perekat"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_023",
+    "category": "aturan",
+    "question": "Apakah boleh merokok di kamar?",
+    "answer": "Tidak boleh kak. Merokok dilarang di dalam kamar dan area umum. Merokok hanya boleh di luar atau balkon.",
+    "keywords": [
+      "merokok",
+      "rokok",
+      "smoking",
+      "kamar",
+      "area umum",
+      "balkon"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_024",
+    "category": "parkir",
+    "question": "Apakah boleh parkir di depan rumah tetangga?",
+    "answer": "Tidak boleh kak. Dilarang parkir di depan rumah tetangga, dan kerusakan akibat sembarang parkir bukan tanggung jawab kost.",
+    "keywords": [
+      "parkir",
+      "tetangga",
+      "depan rumah",
+      "motor",
+      "mobil",
+      "sembarang parkir"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_025",
+    "category": "aturan",
+    "question": "Apakah boleh meletakkan barang di luar kamar?",
+    "answer": "Tidak boleh kak. Barang yang diletakkan di luar kamar akan dianggap tidak terpakai dan bisa disingkirkan karena mengganggu kenyamanan kost.",
+    "keywords": [
+      "barang",
+      "luar kamar",
+      "koridor",
+      "meletakkan barang",
+      "disingkirkan"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_026",
+    "category": "dapur",
+    "question": "Apakah peralatan makan dan masak harus dicuci sendiri?",
+    "answer": "Iya kak, peralatan makan dan masak wajib dicuci sendiri setelah dipakai.",
+    "keywords": [
+      "peralatan makan",
+      "peralatan masak",
+      "cuci piring",
+      "dapur",
+      "dicuci sendiri"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_027",
+    "category": "aturan",
+    "question": "Apakah boleh membuat gaduh atau berisik?",
+    "answer": "Tidak boleh kak. Penghuni dilarang membuat gaduh atau berisik sampai mengganggu kenyamanan penghuni lain.",
+    "keywords": [
+      "gaduh",
+      "berisik",
+      "ribut",
+      "suara",
+      "mengganggu",
+      "kenyamanan"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_028",
+    "category": "laundry",
+    "question": "Apakah boleh menggunakan mesin cuci milik kost?",
+    "answer": "Tidak boleh kak, penghuni dilarang menggunakan mesin cuci milik kost.",
+    "keywords": [
+      "mesin cuci",
+      "laundry",
+      "cuci baju",
+      "mencuci"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_029",
+    "category": "dapur",
+    "question": "Apakah boleh memasak di kost?",
+    "answer": "Boleh memasak ringan seperti Indomie dan telur, kak. Memasak berat atau masakan berbau tidak diperbolehkan.",
+    "keywords": [
+      "masak",
+      "memasak",
+      "indomie",
+      "telur",
+      "masak ringan",
+      "masak berat",
+      "bau"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_030",
+    "category": "dapur",
+    "question": "Bagaimana aturan gas untuk dapur bersama?",
+    "answer": "Jatah gas 1 bulan adalah 1 tabung, kak. Kalau habis, penghuni bisa patungan bersama anak kost lain.",
+    "keywords": [
+      "gas",
+      "tabung gas",
+      "jatah gas",
+      "patungan",
+      "dapur"
+    ],
+    "is_dynamic": true,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_031",
+    "category": "air",
+    "question": "Apa yang harus dilakukan jika ada kebocoran air?",
+    "answer": "Jika melihat kebocoran air di closet, shower, atau wastafel, penghuni wajib segera lapor agar bisa diperbaiki, kak.",
+    "keywords": [
+      "air bocor",
+      "kebocoran",
+      "closet",
+      "shower",
+      "wastafel",
+      "lapor"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_032",
+    "category": "air",
+    "question": "Bagaimana jika penghuni lalai melaporkan kebocoran air?",
+    "answer": "Jika penghuni lalai melaporkan kebocoran dan menyebabkan tagihan air melonjak, kelebihan biaya dari biasanya akan dibebankan ke penghuni, kak.",
+    "keywords": [
+      "kebocoran air",
+      "tagihan air",
+      "lalai",
+      "biaya air",
+      "melonjak"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_033",
+    "category": "pembayaran",
+    "question": "Apakah ada denda jika terlambat membayar sewa kost?",
+    "answer": "Ada kak. Terlambat pembayaran sewa kost dikenakan denda Rp50.000 per hari.",
+    "keywords": [
+      "telat bayar",
+      "terlambat",
+      "denda",
+      "50 ribu",
+      "50rb",
+      "pembayaran"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_034",
+    "category": "checkout",
+    "question": "Bagaimana aturan jika tidak memperpanjang kost?",
+    "answer": "Jika tidak memperpanjang kost, wajib info 1 bulan sebelumnya ya kak.",
+    "keywords": [
+      "tidak memperpanjang",
+      "berhenti kost",
+      "keluar kost",
+      "info 1 bulan",
+      "notice"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_035",
+    "category": "checkout",
+    "question": "Jam berapa maksimal check-out dari kost?",
+    "answer": "Check-out maksimal jam 12 siang, kak. Jika lebih dari jam 12 siang, dianggap extend dan dikenakan charge Rp100.000 per hari.",
+    "keywords": [
+      "check out",
+      "checkout",
+      "keluar kost",
+      "jam 12",
+      "extend",
+      "100 ribu"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_036",
+    "category": "ketersediaan",
+    "question": "Apakah masih ada kamar kosong?",
+    "answer": "Untuk ketersediaan kamar, sistem akan mengecek data rooms_public terbaru. Jika tidak ada data yang cocok, perlu dicek dulu dengan admin ya kak.",
+    "keywords": [
+      "kamar kosong",
+      "tersedia",
+      "available",
+      "masih ada",
+      "ready",
+      "slot"
+    ],
+    "is_dynamic": true,
+    "needs_admin_confirmation": true
+  },
+  {
+    "id": "faq_037",
+    "category": "checkin",
+    "question": "Apakah bisa masuk atau check-in hari ini?",
+    "answer": "Untuk jadwal masuk atau check-in perlu dicek dulu dengan admin ya kak, karena tergantung ketersediaan kamar.",
+    "keywords": [
+      "check in",
+      "check-in",
+      "masuk hari ini",
+      "masuk besok",
+      "tanggal masuk"
+    ],
+    "is_dynamic": true,
+    "needs_admin_confirmation": true
+  },
+  {
+    "id": "faq_038",
+    "category": "aturan",
+    "question": "Apakah kost boleh untuk dua orang dalam satu kamar?",
+    "answer": "Tidak bisa kak, kapasitas kamar hanya untuk 1 orang.",
+    "keywords": [
+      "dua orang",
+      "berdua",
+      "share kamar",
+      "pasangan",
+      "teman sekamar"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_039",
+    "category": "harga",
+    "question": "Berapa harga kamar mandi dalam?",
+    "answer": "Harga kamar mandi dalam tergantung lokasi. Untuk harga per rumah yang tersedia, sistem akan mengecek data rooms_public terbaru ya kak.",
+    "keywords": [
+      "kamar mandi dalam",
+      "harga kamar mandi dalam",
+      "1.5 juta",
+      "1500000"
+    ],
+    "is_dynamic": true,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_040",
+    "category": "harga",
+    "question": "Berapa harga kamar mandi luar?",
+    "answer": "Harga kamar mandi luar tergantung lokasi. Untuk harga per rumah yang tersedia, sistem akan mengecek data rooms_public terbaru ya kak.",
+    "keywords": [
+      "kamar mandi luar",
+      "harga kamar mandi luar",
+      "1 juta",
+      "1000000"
+    ],
+    "is_dynamic": true,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "faq_041",
+    "category": "harga",
+    "question": "Berapa harga kamar AC?",
+    "answer": "Semua kamar sudah ada AC, kak. Harga tergantung tipe kamar dan lokasi. Untuk harga kamar yang tersedia, sistem akan mengecek data rooms_public terbaru.",
+    "keywords": [
+      "kamar AC",
+      "harga kamar AC",
+      "AC berapa",
+      "kamar ber-AC",
+      "harga AC",
+      "sewa kamar AC"
+    ],
+    "is_dynamic": true,
+    "needs_admin_confirmation": false
+  }
+]

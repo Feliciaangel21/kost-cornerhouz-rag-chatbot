@@ -1,0 +1,107 @@
+[
+  {
+    "question": "Kak kamar AC berapa?",
+    "expected_faq_id": "faq_041",
+    "should_escalate": false
+  },
+  {
+    "question": "Harga kamar mandi dalam berapa?",
+    "expected_faq_id": "faq_039",
+    "should_escalate": false
+  },
+  {
+    "question": "Kamar mandi luar berapaan kak?",
+    "expected_faq_id": "faq_040",
+    "should_escalate": false
+  },
+  {
+    "question": "Depositnya berapa ya?",
+    "expected_faq_id": "faq_003",
+    "should_escalate": false
+  },
+  {
+    "question": "Ada wifi nggak?",
+    "expected_faq_id": "faq_006",
+    "should_escalate": false
+  },
+  {
+    "question": "Ada water heater?",
+    "expected_faq_id": "faq_007",
+    "should_escalate": false
+  },
+  {
+    "question": "Listrik sudah termasuk belum?",
+    "expected_faq_id": "faq_010",
+    "should_escalate": false
+  },
+  {
+    "question": "Satu kamar boleh berdua nggak?",
+    "expected_faq_id": "faq_038",
+    "should_escalate": false
+  },
+  {
+    "question": "Pasutri boleh kost di sini?",
+    "expected_faq_id": "faq_013",
+    "should_escalate": false
+  },
+  {
+    "question": "Pacar boleh masuk kamar?",
+    "expected_faq_id": "faq_014",
+    "should_escalate": false
+  },
+  {
+    "question": "Pacar boleh nginep nggak?",
+    "expected_faq_id": "faq_017",
+    "should_escalate": false
+  },
+  {
+    "question": "Tamu boleh sampai jam berapa?",
+    "expected_faq_id": "faq_015",
+    "should_escalate": false
+  },
+  {
+    "question": "Orang tua boleh menginap?",
+    "expected_faq_id": "faq_016",
+    "should_escalate": false
+  },
+  {
+    "question": "Boleh bawa kucing?",
+    "expected_faq_id": "faq_018",
+    "should_escalate": false
+  },
+  {
+    "question": "Boleh merokok di kamar?",
+    "expected_faq_id": "faq_023",
+    "should_escalate": false
+  },
+  {
+    "question": "Kalau telat bayar dendanya berapa?",
+    "expected_faq_id": "faq_033",
+    "should_escalate": false
+  },
+  {
+    "question": "Check out maksimal jam berapa?",
+    "expected_faq_id": "faq_035",
+    "should_escalate": false
+  },
+  {
+    "question": "Masih ada kamar kosong?",
+    "expected_faq_id": "faq_036",
+    "should_escalate": true
+  },
+  {
+    "question": "Bisa masuk besok?",
+    "expected_faq_id": "faq_037",
+    "should_escalate": true
+  },
+  {
+    "question": "Ada promo bulan ini?",
+    "expected_faq_id": null,
+    "should_escalate": true
+  },
+  {
+    "question": "Bisa bayar pakai crypto?",
+    "expected_faq_id": null,
+    "should_escalate": true
+  }
+]

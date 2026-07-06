@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kost.cornerhouz Chat</title>
+
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">
+      <div>
+        <h2>Kost.cornerhouz</h2>
+        <p>Admin kost virtual</p>
+      </div>
+
+      <div class="header-actions">
+        <span class="status">Online</span>
+        
+      </div>
+    </div>
+
+    <div id="chat-box" class="chat-box">
+      <div class="message bot">
+        Halo kak 👋 Ada yang bisa dibantu soal kost?
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input
+        id="message-input"
+        type="text"
+        placeholder="Tulis pertanyaan kakak..."
+      />
+      <button onclick="sendMessage()">Kirim</button>
+    </div>
+  </div>
+
+  <script src="/static/chat.js"></script>
+</body>
+</html>
