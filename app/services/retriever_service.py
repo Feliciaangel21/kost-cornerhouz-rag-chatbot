@@ -19,8 +19,33 @@ def normalize_text(text: str) -> str:
     return text
 
 
+def expand_query_terms(text: str) -> str:
+    q = normalize_text(text)
+    expansions = []
+
+    synonym_groups = [
+        ["listrik", "token", "token listrik", "bayar listrik", "biaya listrik"],
+        ["berdua", "dua orang", "2 orang", "diisi 2 orang", "sharing", "share kamar", "satu kamar berdua"],
+        ["survey", "survei", "lihat kamar", "liat kamar", "cek kamar", "datang lihat"],
+        ["booking", "book", "pesan", "keep", "dp", "ambil kamar"],
+        ["pasangan", "pacar", "lawan jenis", "pasutri", "suami istri"],
+    ]
+
+    for group in synonym_groups:
+        if any(normalize_text(term) in q for term in group):
+            expansions.extend(group)
+
+    if re.search(r"\b2\b", q) and any(term in q for term in ["orang", "org", "penghuni"]):
+        expansions.extend(["dua orang", "berdua", "share kamar"])
+
+    if expansions:
+        return f"{q} {' '.join(expansions)}"
+
+    return q
+
+
 def detect_intent(query: str) -> str | None:
-    q = normalize_text(query)
+    q = expand_query_terms(query)
 
     price_words = [
         "harga", "berapa", "biaya", "tarif", "sewa",
@@ -77,7 +102,7 @@ def detect_intent(query: str) -> str | None:
 
 
 def keyword_bonus(query: str, faq: dict) -> float:
-    q = normalize_text(query)
+    q = expand_query_terms(query)
 
     bonus = 0.0
 
@@ -167,7 +192,7 @@ class RetrieverService:
             return False
 
     def _lexical_search(self, query: str, top_k: int):
-        query_norm = normalize_text(query)
+        query_norm = expand_query_terms(query)
         query_tokens = set(query_norm.split())
         results = []
 

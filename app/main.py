@@ -4,6 +4,7 @@ import sys
 import re
 import threading
 import time
+from datetime import date
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -44,7 +45,7 @@ def serve_frontend():
 retriever = RetrieverService()
 room_service = RoomInventoryService()
 nlu_service = NLUService()
-move_in_gate_service = MoveInGateService(max_keep_days=15)
+move_in_gate_service = MoveInGateService(max_keep_days=14)
 
 session_state = {}
 CONVERSATION_HISTORY_LIMIT = 4
@@ -165,6 +166,14 @@ def is_facility_or_rule_question(message: str) -> bool:
         "kompor",
         "ac",
         "water heater",
+        "listrik",
+        "token",
+        "berdua",
+        "dua orang",
+        "2 orang",
+        "sharing",
+        "share kamar",
+        "diisi",
         "tamu",
         "pacar",
         "lawan jenis",
@@ -248,6 +257,49 @@ def is_admin_forward_request(message: str) -> bool:
         )
     )
 
+def is_survey_request(message: str) -> bool:
+    q = message.lower().strip()
+    survey_keywords = [
+        "survey",
+        "survei",
+        "lihat kamar",
+        "liat kamar",
+        "cek kamar",
+        "datang lihat",
+        "boleh lihat",
+        "mau lihat",
+        "mau liat",
+    ]
+
+    return any(keyword in q for keyword in survey_keywords)
+
+def is_booking_request(message: str) -> bool:
+    q = message.lower().strip()
+    booking_keywords = [
+        "booking",
+        "book",
+        "pesan",
+        "keep",
+        "dp",
+        "mau ambil",
+        "jadi ambil",
+        "ambil kamar",
+    ]
+
+    return any(keyword in q for keyword in booking_keywords)
+
+def normalize_move_in_date(value):
+    if isinstance(value, date):
+        return value
+
+    if isinstance(value, str) and value.strip():
+        try:
+            return date.fromisoformat(value.strip())
+        except ValueError:
+            return None
+
+    return None
+
 def is_move_in_date_like(message: str) -> bool:
     q = message.lower().strip()
 
@@ -328,7 +380,6 @@ def is_booking_confirmation(message: str) -> bool:
     confirmation_phrases = [
         "booking",
         "book",
-        "survey",
         "lanjut",
         "lanjut booking",
         "lanjut ke booking",
@@ -463,18 +514,25 @@ def build_kost_rules_text() -> str:
         "19. Check-out maksimal pukul 12.00 siang. Lewat dari pukul 12.00 dianggap extend dan dikenakan charge Rp100.000 per hari."
     )
 
-def build_unknown_reply() -> str:
-    return (
-        "Maaf kak, untuk info itu aku belum punya data yang pasti 🙏\n\n"
-        "Kakak bisa tanya soal:\n"
-        "• ketersediaan kamar\n"
-        "• harga dan deposit\n"
-        "• lokasi kost\n"
-        "• fasilitas\n"
-        "• aturan kost\n"
-        "• booking atau survey\n\n"
-        "Kalau mau, kakak bisa tulis pertanyaannya lebih spesifik ya."
-    )
+def build_unknown_reply(user_message: str = "") -> str:
+    replies = [
+        (
+            "Maaf kak, aku belum punya data yang pasti untuk itu.\n\n"
+            "Kalau pertanyaannya soal kamar kosong, harga, fasilitas, aturan, "
+            "booking, atau survey, kakak bisa tulis sedikit lebih spesifik ya."
+        ),
+        (
+            "Untuk bagian itu aku belum bisa jawab dengan yakin, kak.\n\n"
+            "Boleh dibantu detailnya? Misalnya area yang dicari, tipe kamar, "
+            "tanggal masuk, atau aturan yang ingin ditanyakan."
+        ),
+        (
+            "Aku belum menemukan info yang pas untuk pertanyaan itu, kak. "
+            "Coba tulis ulang dengan kata lain ya, nanti aku cek dari data kost yang ada."
+        ),
+    ]
+    index = sum(ord(char) for char in user_message) % len(replies)
+    return replies[index]
 
 def build_faq_response(
     search_query: str,
@@ -489,7 +547,7 @@ def build_faq_response(
 
     if not results or decision["confidence"] < 0.55:
         return ChatResponse(
-            reply=build_unknown_reply(),
+            reply=build_unknown_reply(user_message),
             confidence=decision["confidence"],
             action="UNKNOWN_NOT_IN_KB",
             reason="No confident FAQ match found",
@@ -590,6 +648,30 @@ def build_owner_whatsapp_reply(
 
     return f"Siap kak. Untuk menyelesaikan prosesnya, silakan chat owner lewat link ini:\n{wa_link}"
 
+def build_survey_whatsapp_reply(
+    user_message: str,
+    last_area: str | None = None,
+    move_in_date=None,
+) -> str:
+    return (
+        "Bisa kak. Untuk survey, jadwal yang tersedia pukul 08.00-19.00.\n\n"
+        + build_owner_whatsapp_reply(
+            user_message=user_message,
+            last_area=last_area,
+            move_in_date=move_in_date,
+            handoff_type="survey",
+        )
+    )
+
+def build_survey_too_far_reply() -> str:
+    return (
+        "Untuk survey, jadwalnya bisa diatur kalau rencana masuknya sudah "
+        "dalam 2 minggu ke depan ya kak.\n\n"
+        "Kalau tanggal masuknya masih lebih dari 2 minggu lagi, kakak bisa "
+        "chat lagi mendekati tanggal masuk supaya info kamar kosong dan "
+        "jadwal surveynya lebih akurat."
+    )
+
 def verify_admin(x_admin_token: str | None = Header(default=None)):
     if not ADMIN_TOKEN:
         raise HTTPException(
@@ -649,7 +731,9 @@ def chat(request: ChatRequest):
     awaiting_move_in_date = state.get("awaiting_move_in_date", False)
     awaiting_booking_confirmation = state.get("awaiting_booking_confirmation", False)
     pending_booking = state.get("pending_booking")
+    pending_handoff_type = state.get("pending_handoff_type")
     last_area = state.get("last_area")
+    last_move_in_date = normalize_move_in_date(state.get("last_move_in_date"))
     last_user_message = state.get("last_user_message")
     last_bot_message = state.get("last_bot_message")
     conversation_history = state.get("conversation_history") or client_history
@@ -658,6 +742,9 @@ def chat(request: ChatRequest):
 
     if not last_area:
         last_area = infer_last_area_from_history(conversation_history)
+
+    if not last_move_in_date:
+        last_move_in_date = infer_move_in_date_from_history(conversation_history)
 
     if (
         not awaiting_booking_confirmation
@@ -688,6 +775,19 @@ def chat(request: ChatRequest):
         last_area = nlu.area.value
     elif detected_area:
         last_area = detected_area
+
+    if nlu.move_in_date:
+        last_move_in_date = nlu.move_in_date
+
+    user_wants_survey = nlu.wants_survey or is_survey_request(user_message)
+    user_wants_booking = nlu.wants_booking or is_booking_request(user_message)
+    current_handoff_type = (
+        "survey"
+        if user_wants_survey
+        else "booking"
+        if user_wants_booking
+        else pending_handoff_type or "booking"
+    )
 
     area_answer = bool(detected_area) or bool(nlu.area)
     facility_or_rule_question = (
@@ -726,7 +826,11 @@ def chat(request: ChatRequest):
             ),
             "awaiting_booking_confirmation": awaiting_booking_confirmation,
             "pending_booking": pending_booking,
+            "pending_handoff_type": pending_handoff_type,
             "last_area": last_area,
+            "last_move_in_date": (
+                str(last_move_in_date) if last_move_in_date else None
+            ),
             "last_user_message": user_message,
             "last_bot_message": response.reply,
             "conversation_history": updated_history,
@@ -780,6 +884,69 @@ def chat(request: ChatRequest):
 
         return finalize_response(response)
 
+    if awaiting_booking_confirmation and user_wants_survey:
+        booking_context = pending_booking or {}
+        survey_date = (
+            normalize_move_in_date(booking_context.get("move_in_date"))
+            or last_move_in_date
+        )
+        gate_result = move_in_gate_service.check(
+            requires_admin_forward=True,
+            move_in_date=survey_date,
+            user_message=user_message,
+        )
+
+        if gate_result.status == MoveInGateStatus.ALLOWED:
+            awaiting_booking_confirmation = False
+            pending_booking = None
+            pending_handoff_type = None
+            last_move_in_date = (
+                getattr(gate_result, "parsed_move_in_date", None)
+                or survey_date
+            )
+            response = ChatResponse(
+                reply=build_survey_whatsapp_reply(
+                    user_message=user_message,
+                    last_area=booking_context.get("area") or last_area,
+                    move_in_date=last_move_in_date,
+                ),
+                confidence=1.0,
+                action="SURVEY_WHATSAPP_LINK",
+                reason="User switched from booking review to survey scheduling",
+                matched_faq_ids=[],
+                needs_admin=True,
+                source="survey_handoff"
+            )
+
+            return finalize_response(response)
+
+        if gate_result.status == MoveInGateStatus.TOO_FAR:
+            response = ChatResponse(
+                reply=build_survey_too_far_reply(),
+                confidence=1.0,
+                action="SURVEY_DATE_TOO_FAR",
+                reason="Survey scheduling is only available within 2 weeks",
+                matched_faq_ids=[],
+                needs_admin=False,
+                source="move_in_gate"
+            )
+
+            return finalize_response(response)
+
+        if gate_result.status == MoveInGateStatus.NEED_DATE:
+            pending_handoff_type = "survey"
+            response = ChatResponse(
+                reply=gate_result.message,
+                confidence=1.0,
+                action="MOVE_IN_DATE_REQUIRED",
+                reason="Survey scheduling requires move-in date",
+                matched_faq_ids=[],
+                needs_admin=False,
+                source="move_in_gate"
+            )
+
+            return finalize_response(response)
+
     # 2. WhatsApp is only revealed after the user explicitly confirms they
     # have finished asking questions and want to proceed.
     if awaiting_booking_confirmation and is_booking_confirmation(user_message):
@@ -811,8 +978,8 @@ def chat(request: ChatRequest):
     # 3. Move-in gate before room inventory / admin fallback / booking / survey
     explicit_admin_request = (
         is_admin_forward_request(user_message)
-        or nlu.wants_booking
-        or nlu.wants_survey
+        or user_wants_booking
+        or user_wants_survey
     )
 
     requires_admin_forward = (
@@ -821,11 +988,19 @@ def chat(request: ChatRequest):
     )
     gate_result = move_in_gate_service.check(
         requires_admin_forward=requires_admin_forward,
-        move_in_date=nlu.move_in_date,
+        move_in_date=nlu.move_in_date or last_move_in_date,
         user_message=user_message,
     )
+    parsed_gate_date = (
+        getattr(gate_result, "parsed_move_in_date", None)
+        or nlu.move_in_date
+        or last_move_in_date
+    )
+    if parsed_gate_date:
+        last_move_in_date = parsed_gate_date
 
     if gate_result.status == MoveInGateStatus.NEED_DATE:
+        pending_handoff_type = current_handoff_type
         response = ChatResponse(
             reply=gate_result.message,
             confidence=1.0,
@@ -839,11 +1014,19 @@ def chat(request: ChatRequest):
         return finalize_response(response)
 
     if gate_result.status == MoveInGateStatus.TOO_FAR:
+        reply = gate_result.message
+        reason = "Move-in date is more than 2 weeks away"
+        action = "MOVE_IN_DATE_TOO_FAR"
+        if current_handoff_type == "survey":
+            reply = build_survey_too_far_reply()
+            action = "SURVEY_DATE_TOO_FAR"
+            reason = "Survey scheduling is only available within 2 weeks"
+
         response = ChatResponse(
-            reply=gate_result.message,
+            reply=reply,
             confidence=1.0,
-            action="MOVE_IN_DATE_TOO_FAR",
-            reason="Move-in date is more than 15 days away",
+            action=action,
+            reason=reason,
             matched_faq_ids=[],
             needs_admin=False,
             source="move_in_gate"
@@ -865,13 +1048,26 @@ def chat(request: ChatRequest):
         return finalize_response(response)
 
     if gate_result.status == MoveInGateStatus.ALLOWED:
-        q = user_message.lower()
+        handoff_type = current_handoff_type
+        parsed_date = parsed_gate_date
 
-        handoff_type = "booking"
-        if nlu.wants_survey or "survey" in q or "lihat kamar" in q or "liat kamar" in q:
-            handoff_type = "survey"
+        if handoff_type == "survey":
+            pending_handoff_type = None
+            response = ChatResponse(
+                reply=build_survey_whatsapp_reply(
+                    user_message=user_message,
+                    last_area=last_area,
+                    move_in_date=parsed_date,
+                ),
+                confidence=1.0,
+                action="SURVEY_WHATSAPP_LINK",
+                reason="Move-in date is eligible for survey scheduling",
+                matched_faq_ids=[],
+                needs_admin=True,
+                source="survey_handoff"
+            )
 
-        parsed_date = getattr(gate_result, "parsed_move_in_date", None) or nlu.move_in_date
+            return finalize_response(response)
 
         pending_booking = {
             "initial_message": user_message,
@@ -880,6 +1076,7 @@ def chat(request: ChatRequest):
             "handoff_type": handoff_type,
         }
         awaiting_booking_confirmation = True
+        pending_handoff_type = None
 
         response = ChatResponse(
             reply=build_booking_review_reply(handoff_type=handoff_type),
