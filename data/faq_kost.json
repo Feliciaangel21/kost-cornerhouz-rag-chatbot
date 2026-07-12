@@ -748,5 +748,24 @@
     ],
     "is_dynamic": false,
     "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_RULES_002",
+    "category": "aturan",
+    "question": "Apakah ada kost khusus putri?",
+    "answer": "Ada kak. Untuk kost putri, pilihannya tersedia di Pinus Hijau 3 No. 7 dan Katalia. Ketersediaan kamar tetap mengikuti data kamar kosong terbaru ya kak.",
+    "keywords": [
+      "kost putri",
+      "kos putri",
+      "khusus putri",
+      "putri",
+      "perempuan",
+      "cewek",
+      "wanita",
+      "pinus hijau 3 no 7",
+      "katalia"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
   }
 ]

@@ -168,6 +168,12 @@ def is_facility_or_rule_question(message: str) -> bool:
         "water heater",
         "listrik",
         "token",
+        "kost putri",
+        "kos putri",
+        "khusus putri",
+        "perempuan",
+        "cewek",
+        "wanita",
         "berdua",
         "dua orang",
         "2 orang",
@@ -219,6 +225,28 @@ def build_kost_bebas_reply() -> str:
         "atau lawan jenis tidak boleh masuk kamar dan tidak boleh menginap.\n\n"
         "Tamu hanya boleh bertamu di ruang tamu/area tamu sampai maksimal "
         "pukul 21.00."
+    )
+
+def is_kost_putri_question(message: str) -> bool:
+    q = message.lower().strip()
+    keywords = [
+        "kost putri",
+        "kos putri",
+        "khusus putri",
+        "putri",
+        "perempuan",
+        "cewek",
+        "wanita",
+    ]
+
+    return any(keyword in q for keyword in keywords)
+
+def build_kost_putri_reply() -> str:
+    return (
+        "Ada kak. Untuk kost putri, pilihannya tersedia di Pinus Hijau 3 No. 7 "
+        "dan Katalia.\n\n"
+        "Ketersediaan kamar tetap mengikuti data kamar kosong terbaru ya kak. "
+        "Kalau kakak mau cek kamar kosongnya, bisa sebut area atau lokasi yang diminati."
     )
 
 def is_admin_forward_request(message: str) -> bool:
@@ -878,6 +906,19 @@ def chat(request: ChatRequest):
             action="STATIC_KOST_BEBAS_RULE",
             reason="Answered kost bebas/Texas/Vegas partner rule",
             matched_faq_ids=["FAQ_RULES_001"],
+            needs_admin=False,
+            source="static"
+        )
+
+        return finalize_response(response)
+
+    if is_kost_putri_question(user_message):
+        response = ChatResponse(
+            reply=build_kost_putri_reply(),
+            confidence=1.0,
+            action="STATIC_KOST_PUTRI_INFO",
+            reason="Answered kost putri availability",
+            matched_faq_ids=["FAQ_RULES_002"],
             needs_admin=False,
             source="static"
         )

@@ -29,6 +29,7 @@ def expand_query_terms(text: str) -> str:
         ["survey", "survei", "lihat kamar", "liat kamar", "cek kamar", "datang lihat"],
         ["booking", "book", "pesan", "keep", "dp", "ambil kamar"],
         ["pasangan", "pacar", "lawan jenis", "pasutri", "suami istri"],
+        ["kost putri", "kos putri", "khusus putri", "putri", "perempuan", "cewek", "wanita"],
     ]
 
     for group in synonym_groups:
