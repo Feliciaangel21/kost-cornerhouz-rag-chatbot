@@ -2,6 +2,8 @@ import os
 import subprocess
 import sys
 import re
+import threading
+import time
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -46,6 +48,10 @@ move_in_gate_service = MoveInGateService(max_keep_days=15)
 
 session_state = {}
 CONVERSATION_HISTORY_LIMIT = 4
+sync_lock = threading.Lock()
+last_public_sync_at = 0.0
+last_public_sync_result = None
+SYNC_ON_REFRESH_MIN_SECONDS = int(os.getenv("SYNC_ON_REFRESH_MIN_SECONDS", "60"))
 
 
 class ChatRequest(BaseModel):
@@ -600,6 +606,29 @@ def verify_admin(x_admin_token: str | None = Header(default=None)):
     return True
 
 
+def sync_google_sheets_data() -> dict:
+    global retriever
+
+    subprocess.run(
+        [sys.executable, "scripts/sync_faq_sheet.py"],
+        check=True
+    )
+
+    subprocess.run(
+        [sys.executable, "scripts/sync_rooms_sheet.py"],
+        check=True
+    )
+
+    retriever = RetrieverService()
+    room_service.reload()
+
+    return {
+        "message": "FAQ and rooms synced from Google Sheets",
+        "rooms_loaded": len(room_service.rooms),
+        "available_rooms": len(room_service.available_rooms())
+    }
+
+
 @app.get("/health")
 def health():
     return {
@@ -1010,24 +1039,43 @@ def sync_rooms(admin: bool = Depends(verify_admin)):
 
 @app.post("/admin/sync-all")
 def sync_all(admin: bool = Depends(verify_admin)):
-    global retriever
-
-    subprocess.run(
-        [sys.executable, "scripts/sync_faq_sheet.py"],
-        check=True
-    )
-
-    subprocess.run(
-        [sys.executable, "scripts/sync_rooms_sheet.py"],
-        check=True
-    )
-
-    retriever = RetrieverService()
-    room_service.reload()
+    result = sync_google_sheets_data()
 
     return {
         "status": "success",
-        "message": "FAQ and rooms synced from Google Sheets",
-        "rooms_loaded": len(room_service.rooms),
-        "available_rooms": len(room_service.available_rooms())
+        **result
     }
+
+
+@app.post("/sync-on-refresh")
+def sync_on_refresh():
+    global last_public_sync_at, last_public_sync_result
+
+    now = time.time()
+    if (
+        last_public_sync_result
+        and SYNC_ON_REFRESH_MIN_SECONDS > 0
+        and now - last_public_sync_at < SYNC_ON_REFRESH_MIN_SECONDS
+    ):
+        return {
+            "status": "skipped_recent",
+            **last_public_sync_result
+        }
+
+    if not sync_lock.acquire(blocking=False):
+        return {
+            "status": "already_running",
+            "message": "Google Sheets sync is already running"
+        }
+
+    try:
+        result = sync_google_sheets_data()
+        last_public_sync_at = time.time()
+        last_public_sync_result = result
+
+        return {
+            "status": "success",
+            **result
+        }
+    finally:
+        sync_lock.release()

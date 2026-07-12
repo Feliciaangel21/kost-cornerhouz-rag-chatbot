@@ -1,5 +1,5 @@
 const API_URL = `${window.location.origin}/chat`;
-const SYNC_URL = `${window.location.origin}/admin/sync-all`;
+const SYNC_URL = `${window.location.origin}/sync-on-refresh`;
 const CHAT_HISTORY_KEY = "kostmate_chat_history";
 const CHAT_HISTORY_LIMIT = 4;
 
@@ -156,6 +156,18 @@ async function syncAll() {
   }
 }
 
+async function syncOnPageLoad() {
+  try {
+    const response = await fetch(SYNC_URL, {
+      method: "POST"
+    });
+    const data = await response.json();
+    console.log("Page refresh sync result:", data);
+  } catch (error) {
+    console.warn("Page refresh sync failed:", error);
+  }
+}
+
 function addMessage(text, sender) {
   const chatBox = document.getElementById("chat-box");
   const div = document.createElement("div");
@@ -189,3 +201,5 @@ document
       sendMessage();
     }
   });
+
+window.addEventListener("load", syncOnPageLoad);
