@@ -1016,7 +1016,7 @@ def sync_faq(admin: bool = Depends(verify_admin)):
 
     return {
         "status": "success",
-        "message": "FAQ synced from Google Sheets and vector index rebuilt"
+        "message": "FAQ synced from Google Sheets"
     }
 
 

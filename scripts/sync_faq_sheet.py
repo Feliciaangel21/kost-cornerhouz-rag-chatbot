@@ -99,7 +99,15 @@ def rebuild_index():
 def main():
     download_csv()
     convert_csv_to_json()
-    rebuild_index()
+    should_rebuild_index = os.getenv("REBUILD_FAQ_INDEX", "false").lower() in {
+        "1",
+        "true",
+        "yes",
+    }
+    if should_rebuild_index:
+        rebuild_index()
+    else:
+        print("Skipped FAQ vector index rebuild.")
     print("FAQ sync complete.")
 
 

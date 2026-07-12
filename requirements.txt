@@ -1,11 +1,5 @@
 fastapi[standard]
 uvicorn
-sentence-transformers
-faiss-cpu
-transformers
-torch
-accelerate
-numpy
 pydantic
 python-dotenv
 requests

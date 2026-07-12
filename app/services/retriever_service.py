@@ -1,13 +1,13 @@
+import json
+import os
 import pickle
 import re
 from pathlib import Path
 
-import faiss
-from sentence_transformers import SentenceTransformer
-
 
 INDEX_PATH = Path("vector_store/faiss.index")
 META_PATH = Path("vector_store/faq_metadata.pkl")
+FAQ_JSON_PATH = Path("data/faq_kost.json")
 
 MODEL_NAME = "LazarusNLP/all-indo-e5-small-v4"
 
@@ -128,13 +128,80 @@ def intent_bonus(query: str, faq: dict) -> float:
 
 class RetrieverService:
     def __init__(self):
-        self.model = SentenceTransformer(MODEL_NAME)
-        self.index = faiss.read_index(str(INDEX_PATH))
+        self.model = None
+        self.index = None
+        self.vector_enabled = os.getenv("ENABLE_VECTOR_SEARCH", "false").lower() in {
+            "1",
+            "true",
+            "yes",
+        }
+        self.faqs = self._load_faqs()
+
+    def _load_faqs(self):
+        if FAQ_JSON_PATH.exists():
+            with open(FAQ_JSON_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
 
         with open(META_PATH, "rb") as f:
-            self.faqs = pickle.load(f)
+            return pickle.load(f)
+
+    def _ensure_vector_index(self) -> bool:
+        if not self.vector_enabled:
+            return False
+
+        if self.model is not None and self.index is not None:
+            return True
+
+        try:
+            import faiss
+            from sentence_transformers import SentenceTransformer
+
+            self.model = SentenceTransformer(MODEL_NAME)
+            self.index = faiss.read_index(str(INDEX_PATH))
+            return True
+        except Exception as exc:
+            print(f"[Retriever] Vector search unavailable, using lexical search: {exc}")
+            self.vector_enabled = False
+            self.model = None
+            self.index = None
+            return False
+
+    def _lexical_search(self, query: str, top_k: int):
+        query_norm = normalize_text(query)
+        query_tokens = set(query_norm.split())
+        results = []
+
+        for faq in self.faqs:
+            haystack = normalize_text(
+                " ".join([
+                    faq.get("category", ""),
+                    faq.get("question", ""),
+                    faq.get("answer", ""),
+                    " ".join(faq.get("keywords", [])),
+                ])
+            )
+            haystack_tokens = set(haystack.split())
+            overlap = len(query_tokens.intersection(haystack_tokens))
+            overlap_score = overlap / max(len(query_tokens), 1)
+            k_bonus = keyword_bonus(query, faq)
+            i_bonus = intent_bonus(query, faq)
+            final_score = overlap_score + k_bonus + i_bonus
+
+            results.append({
+                "score": final_score,
+                "semantic_score": 0.0,
+                "keyword_bonus": k_bonus,
+                "intent_bonus": i_bonus,
+                "faq": faq
+            })
+
+        results = sorted(results, key=lambda x: x["score"], reverse=True)
+        return results[:top_k]
 
     def search(self, query: str, top_k: int = 5):
+        if not self._ensure_vector_index():
+            return self._lexical_search(query, top_k)
+
         query_text = f"query: {query}"
 
         query_embedding = self.model.encode(
