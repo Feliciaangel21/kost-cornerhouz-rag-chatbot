@@ -54,7 +54,7 @@ def download_csv():
     if not ROOMS_URL or "PASTE_" in ROOMS_URL:
         raise ValueError("ROOMS_SHEET_CSV_URL is missing or invalid in .env")
 
-    response = requests.get(ROOMS_URL, timeout=30)
+    response = requests.get(ROOMS_URL, timeout=90)
     response.raise_for_status()
 
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)

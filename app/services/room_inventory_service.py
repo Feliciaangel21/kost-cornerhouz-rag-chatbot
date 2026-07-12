@@ -218,6 +218,19 @@ class RoomInventoryService:
     def get_status(self, room):
         return str(room.get("status") or "").strip().lower()
 
+    def get_gender_policy_label(self, property_name: str, address_short: str = "") -> str:
+        text = normalize_text(f"{property_name} {address_short}")
+
+        # All Katalia properties are khusus putri
+        if "katalia" in text:
+            return "khusus putri"
+
+        # Pinus Hijau 3 No. 7 is khusus putri
+        if "pinus hijau 3" in text and re.search(r"\b(no|nomor)?\s*7\b", text):
+            return "khusus putri"
+
+        return ""
+
     def get_window_type(self, room):
         existing = str(room.get("window_type") or "").strip().lower()
 
@@ -361,12 +374,13 @@ class RoomInventoryService:
 
         return grouped
 
+
     def build_public_availability_reply(self, rooms, filters):
         grouped = self.summarize_by_house(rooms)
 
         if not grouped:
             return (
-                "Untuk tipe kamar itu, saat ini belum ada yang tercatat tersedia. "
+                "Untuk tipe kamar itu, saat ini belum ada yang tercatat tersedia.\n"
                 "Aku cekkan dulu ke admin untuk update paling baru ya kak."
             )
 
@@ -384,60 +398,73 @@ class RoomInventoryService:
                 )
             )
 
-            option_texts = []
+            option_lines = []
 
             for option in options:
                 bathroom_type = option["bathroom_type"]
                 price = option["price"]
                 window_type = option["window_type"]
 
-                text = f"{bathroom_type} {format_rupiah(price)}/bulan"
+                label = bathroom_type
 
-                if window_type:
-                    text += f" ({window_type})"
-
-                option_texts.append(text)
+                option_lines.append(
+                    f"   • {label}\n"
+                    f"     {format_rupiah(price)}/bulan"
+                )
 
             house_label = property_name
 
             if address_short:
                 house_label += f" - {address_short}"
 
-            area_groups[area].append(
-                f"{house_label}: {human_join(option_texts)}"
+            house_text = (
+                f"📍 {house_label}\n"
+                + "\n".join(option_lines)
             )
+
+            area_groups[area].append(house_text)
 
         if len(area_groups) == 1:
             area_name = list(area_groups.keys())[0]
-            house_lines = area_groups[area_name]
+            house_blocks = area_groups[area_name]
 
-            if len(house_lines) == 1:
-                reply = f"Ada kak, untuk area {area_name} tersedia di {house_lines[0]}."
-            else:
-                reply = f"Ada kak, untuk area {area_name} tersedia di:\n- " + "\n- ".join(house_lines) + "."
+            reply = (
+                f"Ada kak, untuk area {area_name} tersedia:\n\n"
+                + "\n\n".join(house_blocks)
+            )
 
         else:
-            area_lines = []
+            area_blocks = []
 
-            for area_name, house_lines in area_groups.items():
-                area_lines.append(
-                    f"{area_name}: " + "; ".join(house_lines)
+            for area_name, house_blocks in area_groups.items():
+                area_blocks.append(
+                    f"Area {area_name}:\n\n" + "\n\n".join(house_blocks)
                 )
 
-            reply = "Ada kak, pilihannya:\n- " + "\n- ".join(area_lines) + "."
+            reply = (
+                "Ada kak, pilihannya:\n\n"
+                + "\n\n".join(area_blocks)
+            )
 
-        if any(
+        has_front_window_price_difference = any(
             self.get_bathroom_type(room) == "kamar mandi luar"
             and self.get_price(room)
             and int(float(self.get_price(room))) > 1000000
             for room in rooms
-        ):
-            reply += " Perbedaan harga biasanya karena ada kamar mandi luar dengan jendela depan."
+        )
 
-        reply += " Depositnya Rp500.000 ya kak. Rencana masuknya kapan?"
+        if has_front_window_price_difference:
+            reply += (
+                "\n\nCatatan:\n"
+                "Harga bisa berbeda karena ada kamar mandi luar dengan jendela depan ya kak."
+            )
+
+        reply += (
+            "\n\nDeposit: Rp500.000\n"
+            "Rencana masuknya kapan ya kak?"
+        )
 
         return reply
-
     def answer_room_query(self, message: str, allow_followup_question: bool = True) -> dict:
         if not self.rooms:
             return {

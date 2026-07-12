@@ -1,107 +1,107 @@
 property_name,area,room_number,bathroom_type,price_monthly,deposit,status,available_from,public_note,last_updated,has_ac,has_wifi,has_water_heater,shared_kitchen,shared_fridge,electricity,fingerprint_access,capacity_persons,accepts_couple
-KATALIA,Lembah Hijau,A1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,A2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,A3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,A5,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,A6,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,B1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,B2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,B3,kamar mandi luar,"1,200,000","500,000",available,,available marker in source: Luar 1.2,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,B5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,B6,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,B7,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,C1,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,C2,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,C3,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-KATALIA,Lembah Hijau,C5,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,11,kamar mandi dalam,"1,300,000","500,000",available,,available marker in source: Dalam 1.3,,TRUE,TRUE,TRUE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,12,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS 4,Meadow Green / Lippo,13,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,A2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,A3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,A4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,A5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,A6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,B1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,B2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,B3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,B4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,B5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PAVILION,Jababeka,B6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,2,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,4,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,9,kamar mandi luar,"1,300,000","500,000",available,,available marker in source: Luar 1.3 Depan,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara Hijau,Meadow Green / Lippo,11,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,11,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,12,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,13,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,14,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,15,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/88,Meadow Green / Lippo,16,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 2/82,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,1B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,2B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,3B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,5B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,6B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,1A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,2A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,3A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,5A,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,6A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-Cemara 1/61,Meadow Green / Lippo,7A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,5,kamar mandi dalam,"1,500,000","500,000",available,,available marker in source: Dalam 1.5,,TRUE,TRUE,TRUE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,11,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
-PINUS HIJAU 3 NO 7,Meadow Green / Lippo,12,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,A1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,A2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,A3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,A5,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,A6,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,B1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,B2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,B3,kamar mandi luar,"1,200,000","500,000",available,,available marker in source: Luar 1.2,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,B5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,B6,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,B7,kamar mandi luar,"1,100,000","500,000",available,,"available marker in source: Luar 1,1",,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,C1,kamar mandi luar,"1,100,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,C2,kamar mandi luar,"1,100,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,C3,kamar mandi luar,"1,100,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+KATALIA 3 No. 8,Lembah Hijau,C5,kamar mandi luar,"1,100,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,11,kamar mandi dalam,"1,300,000","500,000",available,,available marker in source: Dalam 1.3,,TRUE,TRUE,TRUE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,12,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PINUS 4 No. 18,Meadow Green / Lippo,13,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,A2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,A3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,A4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,A5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,A6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,B1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,B2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,B3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,B4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,B5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+PAVILION Blok b1 No. 2,Jababeka,B6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,2,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,4,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,9,kamar mandi luar,"1,300,000","500,000",available,,available marker in source: Luar 1.3 Depan,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara Hijau 1 No 23,Meadow Green / Lippo,11,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,11,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,12,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,13,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,14,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,15,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 88,Meadow Green / Lippo,16,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,5,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 2 No 82,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,1B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,2B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,3B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,5B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,6B,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,1A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,2A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,3A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,5A,kamar mandi luar,"1,000,000","500,000",available,,available marker in source: Luar 1,,TRUE,TRUE,FALSE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,6A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Cemara 1 No 61,Meadow Green / Lippo,7A,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,3,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,4,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,5,kamar mandi dalam,"1,500,000","500,000",available,,available marker in source: Dalam 1.5,,TRUE,TRUE,TRUE,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,6,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,7,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,8,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,9,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,11,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
+Pinus Hijau 3 No 7,Meadow Green / Lippo,12,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
 New Beverly Hills,Meadow Green / Lippo,10,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
 Palm Townhouse A1/15,Meadow Green / Lippo,1,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE
 Palm Townhouse A1/15,Meadow Green / Lippo,2,,,"500,000",occupied,,,,TRUE,TRUE,,TRUE,TRUE,token bayar sendiri,TRUE,1,FALSE

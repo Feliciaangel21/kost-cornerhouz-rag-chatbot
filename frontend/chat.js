@@ -1,5 +1,94 @@
 const API_URL = `${window.location.origin}/chat`;
 const SYNC_URL = `${window.location.origin}/admin/sync-all`;
+const CHAT_HISTORY_KEY = "kostmate_chat_history";
+const CHAT_HISTORY_LIMIT = 4;
+
+function getChatSessionId() {
+  const storageKey = "kostmate_chat_session_id";
+  let sessionId = sessionStorage.getItem(storageKey);
+
+  if (!sessionId) {
+    sessionId = window.crypto?.randomUUID
+      ? window.crypto.randomUUID()
+      : `web_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+    sessionStorage.setItem(storageKey, sessionId);
+  }
+
+  return sessionId;
+}
+
+const CHAT_SESSION_ID = getChatSessionId();
+
+function getRecentChatHistory() {
+  try {
+    const history = JSON.parse(sessionStorage.getItem(CHAT_HISTORY_KEY) || "[]");
+    if (!Array.isArray(history)) return [];
+
+    return history
+      .filter(function (item) {
+        return (
+          item &&
+          (item.role === "user" || item.role === "assistant") &&
+          typeof item.content === "string" &&
+          item.content.trim()
+        );
+      })
+      .slice(-CHAT_HISTORY_LIMIT);
+  } catch (error) {
+    return [];
+  }
+}
+
+function rememberChatMessage(role, content) {
+  const history = getRecentChatHistory();
+  history.push({ role, content });
+  sessionStorage.setItem(
+    CHAT_HISTORY_KEY,
+    JSON.stringify(history.slice(-CHAT_HISTORY_LIMIT))
+  );
+}
+
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text || "";
+  return div.innerHTML;
+}
+
+function linkify(text) {
+  let escapedText = escapeHtml(text || "");
+
+  const links = [];
+
+  // Markdown links: [Instagram Kost.cornerhouz](https://...)
+  escapedText = escapedText.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+    function (_, label, url) {
+      const placeholder = `__LINK_${links.length}__`;
+      links.push(
+        `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`
+      );
+      return placeholder;
+    }
+  );
+
+  // Raw URLs: https://...
+  escapedText = escapedText.replace(/(https?:\/\/[^\s<]+)/g, function (url) {
+    const placeholder = `__LINK_${links.length}__`;
+    links.push(
+      `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`
+    );
+    return placeholder;
+  });
+
+  links.forEach(function (html, index) {
+    escapedText = escapedText.replace(`__LINK_${index}__`, html);
+  });
+
+  // Important: make backend \n show as real line breaks
+  escapedText = escapedText.replace(/\n/g, "<br>");
+
+  return escapedText;
+}
 
 async function sendMessage() {
   const input = document.getElementById("message-input");
@@ -7,7 +96,10 @@ async function sendMessage() {
 
   if (!message) return;
 
+  const conversationHistory = getRecentChatHistory();
+
   addMessage(message, "user");
+  rememberChatMessage("user", message);
   input.value = "";
 
   addMessage("Sebentar ya kak...", "bot");
@@ -19,8 +111,9 @@ async function sendMessage() {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        session_id: "web_user",
-        message: message
+        session_id: CHAT_SESSION_ID,
+        message: message,
+        conversation_history: conversationHistory
       })
     });
 
@@ -28,6 +121,7 @@ async function sendMessage() {
 
     removeLoadingMessage();
     addMessage(data.reply, "bot");
+    rememberChatMessage("assistant", data.reply);
 
     console.log("Chat result:", data);
   } catch (error) {
@@ -67,7 +161,12 @@ function addMessage(text, sender) {
   const div = document.createElement("div");
 
   div.className = `message ${sender}`;
-  div.textContent = text;
+
+  if (sender === "bot") {
+    div.innerHTML = linkify(text);
+  } else {
+    div.textContent = text;
+  }
 
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;

@@ -622,5 +622,131 @@
     ],
     "is_dynamic": true,
     "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_001",
+    "category": "Fasilitas",
+    "question": "Ada parkir motor?",
+    "answer": "Ya kak, semua lokasi menyediakan parkir motor untuk penghuni.",
+    "keywords": [
+      "parkir",
+      "parkir motor",
+      "motor",
+      "parking",
+      "kendaraan"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_002",
+    "category": "Fasilitas",
+    "question": "Ada parkir mobil?",
+    "answer": "Parkir mobil hanya tersedia di Pinus Hijau 3 No. 7 dengan biaya tambahan Rp200.000/bulan.",
+    "keywords": [
+      "parkir",
+      "parkir mobil",
+      "mobil",
+      "parking",
+      "pinus hijau 3 no 7",
+      "biaya parkir"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_003",
+    "category": "Fasilitas",
+    "question": "Berapa biaya parkir mobil?",
+    "answer": "Biaya parkir mobil sebesar Rp200.000/bulan dan hanya tersedia di Pinus Hijau 3 No. 7.",
+    "keywords": [
+      "biaya parkir mobil",
+      "harga parkir mobil",
+      "parkir mobil",
+      "200000",
+      "200 ribu",
+      "pinus hijau 3 no 7"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_004",
+    "category": "Fasilitas",
+    "question": "Kalau di kost lain bisa parkir mobil?",
+    "answer": "Untuk lokasi selain Pinus Hijau 3 No. 7 belum tersedia parkir mobil. Mobil dapat diparkir di pinggir jalan selama tidak parkir di depan rumah tetangga.",
+    "keywords": [
+      "parkir mobil",
+      "kost lain",
+      "selain pinus hijau",
+      "pinggir jalan",
+      "depan rumah tetangga"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_005",
+    "category": "Fasilitas",
+    "question": "Boleh parkir di jalan?",
+    "answer": "Boleh kak, selama tidak parkir di depan rumah tetangga agar tidak mengganggu warga sekitar.",
+    "keywords": [
+      "parkir di jalan",
+      "pinggir jalan",
+      "parkir",
+      "rumah tetangga",
+      "warga"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_006",
+    "category": "Fasilitas",
+    "question": "Parkir mobil di Lippo ada?",
+    "answer": "Untuk area Lippo, parkir mobil hanya tersedia di Pinus Hijau 3 No. 7 dengan biaya Rp200.000/bulan.",
+    "keywords": [
+      "parkir mobil lippo",
+      "lippo",
+      "pinus hijau 3 no 7",
+      "biaya parkir",
+      "200000"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_PARKING_007",
+    "category": "Fasilitas",
+    "question": "Parkir mobil di Katalia ada?",
+    "answer": "Maaf kak, Katalia tidak menyediakan parkir mobil. Mobil dapat diparkir di pinggir jalan selama tidak di depan rumah tetangga.",
+    "keywords": [
+      "parkir mobil katalia",
+      "katalia",
+      "parkir mobil",
+      "pinggir jalan",
+      "rumah tetangga"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_RULES_001",
+    "category": "aturan_tamu",
+    "question": "Apakah ini kost bebas seperti Texas atau Vegas?",
+    "answer": "Bukan kost bebas ya kak. Di semua lokasi Kost.cornerhouz, pasangan atau lawan jenis tidak boleh masuk kamar dan tidak boleh menginap. Tamu hanya boleh bertamu di ruang tamu/area tamu sampai maksimal pukul 21.00.",
+    "keywords": [
+      "kost bebas",
+      "texas",
+      "vegas",
+      "bawa pasangan",
+      "bawa pacar",
+      "pasangan",
+      "lawan jenis",
+      "pacar boleh masuk kamar",
+      "pacar menginap"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
   }
 ]

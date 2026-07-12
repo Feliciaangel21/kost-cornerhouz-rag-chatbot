@@ -8,3 +8,5 @@ accelerate
 numpy
 pydantic
 python-dotenv
+requests
+openai

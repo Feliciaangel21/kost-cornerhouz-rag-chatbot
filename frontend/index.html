@@ -6,8 +6,9 @@
 
   <title>Kost.cornerhouz Chat</title>
 
-  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/style.css?v=10" />
 </head>
+
 <body>
   <div class="chat-container">
     <div class="chat-header">
@@ -18,13 +19,13 @@
 
       <div class="header-actions">
         <span class="status">Online</span>
-        
       </div>
     </div>
 
     <div id="chat-box" class="chat-box">
       <div class="message bot">
-        Halo kak 👋 Ada yang bisa dibantu soal kost?
+        Halo kak 👋<br />
+        Ada yang bisa dibantu soal kost?
       </div>
     </div>
 
@@ -33,11 +34,13 @@
         id="message-input"
         type="text"
         placeholder="Tulis pertanyaan kakak..."
+        autocomplete="off"
       />
+
       <button onclick="sendMessage()">Kirim</button>
     </div>
   </div>
 
-  <script src="/static/chat.js"></script>
+  <script src="/static/chat.js?v=4"></script>
 </body>
 </html>
