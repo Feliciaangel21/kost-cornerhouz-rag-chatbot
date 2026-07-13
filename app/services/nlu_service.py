@@ -466,14 +466,13 @@ Return ONLY valid JSON with this schema:
             )
 
         if any(keyword in text for keyword in availability_keywords):
-            normalized_area = area or last_area
             return NLUResult(
                 original_message=user_message,
-                clean_query=self._build_clean_room_query(normalized_area, "availability"),
+                clean_query=self._build_clean_room_query(area, "availability"),
                 intent=ChatIntent.ROOM_AVAILABILITY,
                 route=ChatRoute.ROOM_INVENTORY,
-                area=normalized_area,
-                is_follow_up=bool(last_area and not area),
+                area=area,
+                is_follow_up=False,
                 confidence=0.8,
                 reason="Rule-based availability keyword match",
             )
