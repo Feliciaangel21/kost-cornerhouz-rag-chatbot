@@ -155,6 +155,7 @@ def is_facility_or_rule_question(message: str) -> bool:
 
     keywords = [
         "parkir",
+        "fasilitas",
         "motor",
         "mobil",
         "wifi",
@@ -168,6 +169,14 @@ def is_facility_or_rule_question(message: str) -> bool:
         "water heater",
         "listrik",
         "token",
+        "perabot",
+        "furnitur",
+        "furniture",
+        "meja",
+        "kursi",
+        "kasur",
+        "dipan",
+        "lemari",
         "kost putri",
         "kos putri",
         "khusus putri",
@@ -247,6 +256,45 @@ def build_kost_putri_reply() -> str:
         "dan Katalia.\n\n"
         "Ketersediaan kamar tetap mengikuti data kamar kosong terbaru ya kak. "
         "Kalau kakak mau cek kamar kosongnya, bisa sebut area atau lokasi yang diminati."
+    )
+
+def is_room_furniture_question(message: str) -> bool:
+    q = message.lower().strip()
+    furniture_terms = [
+        "perabot",
+        "furnitur",
+        "furniture",
+        "meja",
+        "kursi",
+        "kasur",
+        "dipan",
+        "lemari",
+    ]
+    room_facility_phrases = [
+        "fasilitas kamar",
+        "fasilitas kamarnya",
+        "kamar sudah termasuk",
+        "kamarnya sudah termasuk",
+        "kamarnya termasuk",
+        "isi kamar",
+        "di kamar ada apa",
+        "kamar dilengkapi",
+        "sudah dilengkapi",
+        "perlengkapan kamar",
+    ]
+
+    asks_bring_own_furniture = (
+        any(term in q for term in furniture_terms)
+        and any(term in q for term in ["bawa", "membawa", "sendiri", "sndri", "sdniiri"])
+    )
+    asks_room_facilities = any(phrase in q for phrase in room_facility_phrases)
+
+    return asks_bring_own_furniture or asks_room_facilities
+
+def build_room_furniture_reply() -> str:
+    return (
+        "Setiap kamar sudah dilengkapi AC, meja, kursi, kasur, dipan, dan lemari ya kak.\n\n"
+        "Untuk perabot tambahan, penghuni tidak boleh membawa perabot sendiri."
     )
 
 def is_admin_forward_request(message: str) -> bool:
@@ -919,6 +967,19 @@ def chat(request: ChatRequest):
             action="STATIC_KOST_PUTRI_INFO",
             reason="Answered kost putri availability",
             matched_faq_ids=["FAQ_RULES_002"],
+            needs_admin=False,
+            source="static"
+        )
+
+        return finalize_response(response)
+
+    if is_room_furniture_question(user_message):
+        response = ChatResponse(
+            reply=build_room_furniture_reply(),
+            confidence=1.0,
+            action="STATIC_ROOM_FURNITURE_RULE",
+            reason="Answered room furniture and included facilities",
+            matched_faq_ids=["FAQ_FACILITY_ROOM_001"],
             needs_admin=False,
             source="static"
         )

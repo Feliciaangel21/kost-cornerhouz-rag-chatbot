@@ -30,6 +30,7 @@ def expand_query_terms(text: str) -> str:
         ["booking", "book", "pesan", "keep", "dp", "ambil kamar"],
         ["pasangan", "pacar", "lawan jenis", "pasutri", "suami istri"],
         ["kost putri", "kos putri", "khusus putri", "putri", "perempuan", "cewek", "wanita"],
+        ["perabot", "furnitur", "furniture", "meja", "kursi", "kasur", "dipan", "lemari", "fasilitas kamar", "isi kamar"],
     ]
 
     for group in synonym_groups:
@@ -60,7 +61,8 @@ def detect_intent(query: str) -> str | None:
 
     facility_words = [
         "fasilitas", "wifi", "internet", "ac", "water heater",
-        "dapur", "kulkas", "fingerprint"
+        "dapur", "kulkas", "fingerprint", "perabot", "furnitur",
+        "furniture", "meja", "kursi", "kasur", "dipan", "lemari"
     ]
 
     rule_words = [

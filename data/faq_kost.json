@@ -767,5 +767,30 @@
     ],
     "is_dynamic": false,
     "needs_admin_confirmation": false
+  },
+  {
+    "id": "FAQ_FACILITY_ROOM_001",
+    "category": "fasilitas",
+    "question": "Apa saja fasilitas yang sudah termasuk di dalam kamar?",
+    "answer": "Setiap kamar sudah dilengkapi AC, meja, kursi, kasur, dipan, dan lemari ya kak. Untuk perabot tambahan, penghuni tidak boleh membawa perabot sendiri.",
+    "keywords": [
+      "fasilitas kamar",
+      "fasilitas kamarnya",
+      "kamar termasuk apa",
+      "isi kamar",
+      "perlengkapan kamar",
+      "perabot sendiri",
+      "bawa perabot",
+      "bawa furniture",
+      "bawa furnitur",
+      "meja",
+      "kursi",
+      "kasur",
+      "dipan",
+      "lemari",
+      "ac"
+    ],
+    "is_dynamic": false,
+    "needs_admin_confirmation": false
   }
 ]
