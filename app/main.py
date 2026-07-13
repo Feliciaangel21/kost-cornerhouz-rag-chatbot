@@ -557,6 +557,13 @@ def infer_handoff_type_from_history(history: list[dict[str, str]]) -> str:
 
     return "booking"
 
+def build_move_in_too_far_reply() -> str:
+    return (
+        "Maaf kak, untuk saat ini kami belum bisa keep kamar terlalu lama. "
+        "Kakak bisa tanya lagi mendekati tanggal masuk ya, kira-kira "
+        "1-2 minggu sebelumnya supaya info kamar kosongnya lebih akurat."
+    )
+
 def build_difference_reply() -> str:
     return (
         "Bedanya biasanya dari tipe kamar dan posisi jendela, kak. "
@@ -808,6 +815,7 @@ def chat(request: ChatRequest):
     awaiting_booking_confirmation = state.get("awaiting_booking_confirmation", False)
     pending_booking = state.get("pending_booking")
     pending_handoff_type = state.get("pending_handoff_type")
+    last_move_in_too_far = state.get("last_move_in_too_far", False)
     last_area = state.get("last_area")
     last_move_in_date = normalize_move_in_date(state.get("last_move_in_date"))
     last_user_message = state.get("last_user_message")
@@ -903,6 +911,7 @@ def chat(request: ChatRequest):
             "awaiting_booking_confirmation": awaiting_booking_confirmation,
             "pending_booking": pending_booking,
             "pending_handoff_type": pending_handoff_type,
+            "last_move_in_too_far": last_move_in_too_far,
             "last_area": last_area,
             "last_move_in_date": (
                 str(last_move_in_date) if last_move_in_date else None
@@ -1083,6 +1092,31 @@ def chat(request: ChatRequest):
         or user_wants_booking
         or user_wants_survey
     )
+    message_has_new_move_in_date = bool(
+        nlu.move_in_date or is_move_in_date_like(user_message)
+    )
+
+    if explicit_admin_request and last_move_in_too_far and not message_has_new_move_in_date:
+        reply = build_move_in_too_far_reply()
+        reason = "Move-in date was already known to be more than 2 weeks away"
+        action = "MOVE_IN_DATE_TOO_FAR"
+
+        if current_handoff_type == "survey":
+            reply = build_survey_too_far_reply()
+            action = "SURVEY_DATE_TOO_FAR"
+            reason = "Survey scheduling is only available within 2 weeks"
+
+        response = ChatResponse(
+            reply=reply,
+            confidence=1.0,
+            action=action,
+            reason=reason,
+            matched_faq_ids=[],
+            needs_admin=False,
+            source="move_in_gate"
+        )
+
+        return finalize_response(response)
 
     requires_admin_forward = (
         not awaiting_booking_confirmation
@@ -1102,6 +1136,7 @@ def chat(request: ChatRequest):
         last_move_in_date = parsed_gate_date
 
     if gate_result.status == MoveInGateStatus.NEED_DATE:
+        last_move_in_too_far = False
         pending_handoff_type = current_handoff_type
         response = ChatResponse(
             reply=gate_result.message,
@@ -1116,6 +1151,7 @@ def chat(request: ChatRequest):
         return finalize_response(response)
 
     if gate_result.status == MoveInGateStatus.TOO_FAR:
+        last_move_in_too_far = True
         reply = gate_result.message
         reason = "Move-in date is more than 2 weeks away"
         action = "MOVE_IN_DATE_TOO_FAR"
@@ -1137,6 +1173,7 @@ def chat(request: ChatRequest):
         return finalize_response(response)
 
     if gate_result.status == MoveInGateStatus.PAST_DATE:
+        last_move_in_too_far = False
         response = ChatResponse(
             reply=gate_result.message,
             confidence=1.0,
@@ -1150,6 +1187,7 @@ def chat(request: ChatRequest):
         return finalize_response(response)
 
     if gate_result.status == MoveInGateStatus.ALLOWED:
+        last_move_in_too_far = False
         handoff_type = current_handoff_type
         parsed_date = parsed_gate_date
 
